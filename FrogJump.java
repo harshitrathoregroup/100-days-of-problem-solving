@@ -7,6 +7,18 @@ public class FrogJump {
         int[] dp = new int[n];
         Arrays.fill(dp, -1);
         System.out.println(function(heights, 0, dp));
+
+        for (int i = 0; i < n; i++){
+            int fs = dp[i - 1] + Math.abs(heights[i] - heights[i - 1]);
+            int ss = Integer.MAX_VALUE;
+            if (i > 1){
+                ss = dp[i - 2] + Math.abs(heights[i] - heights[i - 2]);
+            }
+
+            dp[i] = Math.min(fs, ss);
+        }
+
+        System.out.println(dp[n - 1]);
     }
 
     static int function(int[] arr, int idx, int[] dp){
