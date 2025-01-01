@@ -1,6 +1,6 @@
 public class MinCostTicket_983 {
     public static void main(String[] args) {
-        int[] days = new int[] { 1, 4, 6, 7, 8, 20 };
+        int[] days = { 1, 4, 6, 7, 8, 20 };
         int[] costs = new int[] { 2, 7, 15 };
         int n = days.length;
         System.out.println(function(days, costs, n, 0));
